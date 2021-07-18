@@ -7,13 +7,13 @@ number of each item to include in a collection, the backpack, so that the
 total weight is less than or equal to a given limit (backpack weight limit)
 and the total value is as large as [Document Link](https://drive.google.com/file/d/1z4gms7afpp8iVPRHtXUJEzCfu5gmF7yx/view?usp=sharing) possible.
 
-### APplication Download Link
+### Application Download Link
 
 [Tenner KnapSack Test Demo App](https://drive.google.com/file/d/1aa6fp5I9DzOn5gTFREfiXUA_Mfmv-qKb/view?usp=sharing). Please download the demo App to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
 
 ### Video Demo OF App
 
-[Tenner KnapSack Test Video Demo](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp). Please see the demo App video to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
+[Tenner KnapSack Test Video Demo](https://drive.google.com/file/d/1CrrkxUoxfn7US-VOw7DsKnM2GLXnhGWz/view?usp=sharing). Please see the demo App video to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
 
 ### Code Snipet
 Below are all the logic and ui code of this application mentioned properly.if you dont want to download the code and just want to see how problem statement has been solved 
