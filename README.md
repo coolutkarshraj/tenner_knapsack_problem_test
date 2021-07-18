@@ -1,5 +1,5 @@
-# Sample android app
-Sample app demonstrating video playback using the vdocipher android sdk
+# Sample android demp app for solving Knapsack Problem
+Sample app demonstrating how we can solved our Knapsack Problem using this demo app by using recursion or through dynamic programming.Output problem of knapsack app will show Max Profit, Elapsed time(How much time it will take to execute  recursion or dynamic programming of given input) and time complexity . 
 
 # Problem Statement
 Given a set of boxes, each with a weight and a value, determine the
