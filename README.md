@@ -1,5 +1,5 @@
 # Sample android demp app for solving Knapsack Problem
-Sample app demonstrating how we can solved our Knapsack Problem using this demo app by using recursion or through dynamic programming.Output problem of knapsack app will show Max Profit, Elapsed time(How much time it will take to execute  recursion or dynamic programming of given input) and time complexity . 
+Sample app demonstrating how we can solved our Knapsack Problem using this demo app by using recursion or through dynamic programming.Output problem of knapsack app will show Max Profit, Elapsed time(How much time it will take to execute  recursion or dynamic programming of given input). . 
 
 # Problem Statement
 Given a set of boxes, each with a weight and a value, determine the
@@ -9,7 +9,7 @@ and the total value is as large as [Document Link](https://drive.google.com/file
 
 ### APplication Download Link
 
-[Tenner KnapSack Test Demo App](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp). Please download the demo App to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
+[Tenner KnapSack Test Demo App](https://drive.google.com/file/d/1aa6fp5I9DzOn5gTFREfiXUA_Mfmv-qKb/view?usp=sharing). Please download the demo App to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
 
 ### Video Demo OF App
 
