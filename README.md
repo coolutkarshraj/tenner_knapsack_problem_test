@@ -1,7 +1,26 @@
 # Sample android app
 Sample app demonstrating video playback using the vdocipher android sdk
 
-### Add dependency
+# Problem Statement
+Given a set of boxes, each with a weight and a value, determine the
+number of each item to include in a collection, the backpack, so that the
+total weight is less than or equal to a given limit (backpack weight limit)
+and the total value is as large as [Document Link](https://drive.google.com/file/d/1z4gms7afpp8iVPRHtXUJEzCfu5gmF7yx/view?usp=sharing) possible.
+
+### APplication Download Link
+
+[Tenner KnapSack Test Demo App](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp). Please download the demo App to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
+
+### Video Demo OF App
+
+[Tenner KnapSack Test Video Demo](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp). Please see the demo App video to see how KnapSack problem will be solved by Recursive and dynamic Problem Method.  
+
+### Code Snipet
+Below are all the logic and ui code of this application mentioned properly.if you dont want to download the code and just want to see how problem statement has been solved 
+please refer below section.
+First Part of code we will describe activity code what user will see and on click of Dynamic Problem or recursion method we handle clickevent, exception handling, validation check and show value to UI.
+
+### Main Activity Code
 
 ```
 package com.io.knapsack_test;
@@ -202,11 +221,9 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### Add cast plugin dependency
+### Logic For implementing Knapsack by Dynamic Programming
 
-If you also need Google Cast integration for your app, add a dependency to the cast plugin as well.
-
-Add the dependency in your cast app module's `build.gradle` file.
+THis section contains the all logic code that we implement to get max value through dynamic approach.
 
 ```
 package com.io.knapsack_test;
@@ -245,6 +262,9 @@ public class MaxValByDynamicProg {
 }
 
 ```
+### Logic For implementing Knapsack by Recursive way
+
+THis section contains the all logic code that we implement to get max value through recursion(Brute Force Approach).
 
 ```
 package com.io.knapsack_test;
@@ -288,6 +308,7 @@ public class MaxValueByRecursion {
 }
 
 ```
+### User UI Code (XML File)
 
 
 ```
@@ -435,6 +456,7 @@ public class MaxValueByRecursion {
 
 </RelativeLayout>
 ```
+### Color.XML (XML File)
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -452,7 +474,7 @@ public class MaxValueByRecursion {
     <color name="stroke_bg">#CFAA13</color>
 </resources>
 ```
-
+### dimens (XML File)
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -465,7 +487,7 @@ public class MaxValueByRecursion {
     <dimen name="ten_sp">10sp</dimen>
 </resources>
 ```
-
+### string (XML File)
 ```
 <resources>
     <string name="app_name">Knapsack_test</string>
