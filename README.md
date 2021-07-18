@@ -288,6 +288,199 @@ public class MaxValueByRecursion {
 }
 
 ```
+
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarTop"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/recursion_btn_bg"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toolbar Title"
+            android:fontFamily="@font/open_sans_bold_italic"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/etKnapsackWeight"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbarTop"
+        android:layout_height="@dimen/fifty_five"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginTop="@dimen/fifteen"
+        android:layout_marginRight="@dimen/ten"
+        android:inputType="number"
+        android:background="@drawable/etbackground"
+        android:fontFamily="@font/open_sans_regular"
+        android:hint="@string/enter_bag_weight"
+        android:padding="@dimen/fifteen"
+        android:textColor="@color/black"
+        android:textSize="@dimen/fourteen_sp" />
+
+    <EditText
+        android:id="@+id/etObjectWeight"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_five"
+        android:layout_below="@+id/etKnapsackWeight"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginTop="@dimen/fifteen"
+        android:layout_marginRight="@dimen/ten"
+        android:background="@drawable/etbackground"
+        android:fontFamily="@font/open_sans_regular"
+        android:hint="@string/enter_object_weight"
+        android:padding="@dimen/fifteen"
+        android:textColor="@color/black"
+        android:textSize="@dimen/fourteen_sp" />
+
+    <TextView
+        android:id="@+id/tvHintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etObjectWeight"
+        android:layout_marginLeft="@dimen/twenty"
+        android:layout_marginRight="@dimen/twenty"
+        android:fontFamily="@font/open_sans_bold_italic"
+        android:hint="@string/enter_multiple_weight"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/etObjectVal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty_five"
+        android:layout_below="@+id/tvHintText"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginTop="@dimen/fifteen"
+        android:layout_marginRight="@dimen/ten"
+        android:background="@drawable/etbackground"
+        android:fontFamily="@font/open_sans_regular"
+        android:hint="@string/enter_object_value"
+        android:padding="@dimen/fifteen"
+        android:textColor="@color/black"
+        android:textSize="@dimen/fourteen_sp" />
+
+    <TextView
+        android:id="@+id/tvMultipleObjValHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etObjectVal"
+        android:layout_marginLeft="@dimen/twenty"
+        android:layout_marginRight="@dimen/twenty"
+        android:fontFamily="@font/open_sans_bold_italic"
+        android:hint="@string/multiple_val"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tvKnapSackValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="@dimen/fifteen"
+        android:layout_marginRight="@dimen/fifteen"
+        android:layout_below="@+id/tvMultipleObjValHint"
+        android:fontFamily="@font/open_sans_regular"
+        android:text="@string/dummy_text"
+        android:textSize="@dimen/twenty"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnKnapSackZeroOne"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/fifty_five"
+            android:layout_margin="@dimen/ten"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/open_sans_bold_italic"
+            android:text="Dynamic Programming"
+            android:textSize="@dimen/ten_sp"
+            app:backgroundTint="@color/dynamic_btn_bg" />
+
+        <Button
+            android:id="@+id/btnKnapSackGreedy"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/fifty_five"
+            android:layout_margin="@dimen/ten"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/open_sans_bold_italic"
+            android:text="@string/by_recursion"
+            android:textSize="@dimen/ten_sp"
+            app:backgroundTint="@color/recursion_btn_bg"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+```
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="recursion_btn_bg">#CFC913</color>
+    <color name="notification_bar">#CFC913</color>
+    <color name="dynamic_btn_bg">#CFAA13</color>
+    <color name="stroke_bg">#CFAA13</color>
+</resources>
+```
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fifty_five">55dp</dimen>
+    <dimen name="fifteen">15dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="fourteen_sp">14sp</dimen>
+    <dimen name="twenty">20dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="ten_sp">10sp</dimen>
+</resources>
+```
+
+```
+<resources>
+    <string name="app_name">Knapsack_test</string>
+    <string name="enter_bag_weight">Enter bag weight.</string>
+    <string name="enter_object_weight">Enter object weight.</string>
+    <string name="enter_multiple_weight">Enter multiple Object weight using comma like 2,13,15</string>
+    <string name="enter_object_value">Enter object value</string>
+    <string name="multiple_val">Enter multiple Object value using comma like 2,13,15.</string>
+    <string name="dummy_text">Value: 0</string>
+    <string name="weight_value_wrong_input">Please enter same  number of object weight and value seprated with comma like (12,16,8)&amp; (14,18,6) </string>
+    <string name="by_recursion">By Recursion</string>
+    <string name="toolbar_text">Tenner Coding Challenge App</string>
+    <string name="valid">Please enter valid number don\'t give input in decimal or special character as a input.</string>
+</resources>
+```
 ## Issues
 
 Please send all issues and feedback to utkarshcpr@outlook.com
