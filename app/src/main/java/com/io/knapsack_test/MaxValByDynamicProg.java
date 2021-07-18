@@ -5,8 +5,11 @@ import static com.io.knapsack_test.MaxValueByRecursion.max;
 public class MaxValByDynamicProg {
 
     // Returns the maximum value that can
-    // be put in a knapsack of capacity W
-    static int getMaxValByDynamicProg(int W, int wt[],
+    // be put in a knapsack bag of capacity W
+    //w = weight of knapsack bag
+    // wt[] = weight of different object {10,20,30}
+    //val[] = Valye of different object with theier corresponding weight {10,20,30}
+    public static int getMaxValByDynamicProg(int W, int wt[],
                         int val[], int n) {
         int i, w;
         int K[][] = new int[n + 1][W + 1];

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.toolbar_title)
     TextView toolbar_title;
     String message = "";
-    long timeElapsed =0;
+    long timeElapsed = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,17 +72,17 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnKnapSackZeroOne:
-                if(checkValidation()){
+                if (checkValidation()) {
                     formatDataForResult(false);
-                }else {
+                } else {
                     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
                 }
                 break;
             case R.id.btnKnapSackGreedy:
-                if(checkValidation()){
+                if (checkValidation()) {
                     formatDataForResult(true);
-                }else {
+                } else {
                     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
                 }
                 break;
@@ -90,74 +90,103 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+     * Method to check Validation of all
+     * the input text value
+     * whether it is empty or not
+     * if empty any field return false
+     * otherwise true
+     * */
     private boolean checkValidation() {
         boolean isValid = true;
-        if(etKnapsackWeight.getText().toString().trim().length() < 1){
+        if (etKnapsackWeight.getText().toString().trim().length() < 1) {
             isValid = false;
             message = getResources().getString(R.string.enter_bag_weight);
 
-        }else if(etObjectWeight.getText().toString().trim().length() < 1){
+        } else if (etObjectWeight.getText().toString().trim().length() < 1) {
             message = getResources().getString(R.string.enter_multiple_weight);
             isValid = false;
-        }
-        else if(etObjectVal.getText().toString().trim().length() < 1){
+        } else if (etObjectVal.getText().toString().trim().length() < 1) {
             message = getResources().getString(R.string.multiple_val);
             isValid = false;
-        }else {
+        } else {
             isValid = true;
         }
-       return isValid;
+        return isValid;
     }
 
-
+    /*
+    *  Calculate time lapsed to execute program 
+     * Common Method to format the
+     * input in knapsack Problem
+     * convert object weight in array
+     * convert object value in array
+     * then calculating max profit class call
+     * showing result in textview
+     * */
     private void formatDataForResult(boolean isRecursion) {
         timeElapsed = 0;
         long startTime = System.nanoTime();
-        String knapsackWeight = etKnapsackWeight.getText().toString().trim().replace(" ","");
-        String listObject = etObjectWeight.getText().toString().trim().replace(" ","");
-        String listObjectVal = etObjectVal.getText().toString().trim().replace(" ","");
-        String[] strArr = listObject.split(",");
-        int[] intArr = new int[strArr.length];
-        for (int i = 0; i < strArr.length; i++) {
+        //getting value from edittext
+        String knapsackWeight = etKnapsackWeight.getText().toString().trim().replace(" ", "");
+        String listObject = etObjectWeight.getText().toString().trim().replace(" ", "");
+        String listObjectVal = etObjectVal.getText().toString().trim().replace(" ", "");
+        //Converting weight object to String array and inserting to
+        // integer weight array
+        String[] objWeightArr = listObject.split(",");
+        int[] intWeightArr = new int[objWeightArr.length];
+        for (int i = 0; i < objWeightArr.length; i++) {
 
             try {
-                String num = strArr[i];
-                intArr[i] = Integer.parseInt(num);
-            }catch (Exception e){
+                String num = objWeightArr[i];
+                intWeightArr[i] = Integer.parseInt(num);
+            } catch (Exception e) {
                 Toast.makeText(this, "Please enter valid number don't give input in decimal format.", Toast.LENGTH_SHORT).show();
                 return;
             }
         }
-        String[] strArr1 = listObjectVal.split(",");
+        //Converting Value object to String array and inserting to
+        // integer Value array
+        String[] objValArr = listObjectVal.split(",");
 
-        int[] intArr1 = new int[strArr1.length];
-        for (int i = 0; i < strArr1.length; i++) {
+        int[] intValArr = new int[objValArr.length];
+        for (int i = 0; i < objValArr.length; i++) {
             try {
-                String num = strArr1[i];
-                intArr1[i] = Integer.parseInt(num);
-            }catch (Exception e){
+                String num = objValArr[i];
+                intValArr[i] = Integer.parseInt(num);
+            } catch (Exception e) {
                 Toast.makeText(this, "Please enter valid number don't give input in decimal format.", Toast.LENGTH_SHORT).show();
                 return;
             }
         }
-        if(strArr.length == strArr1.length){
-         try {
-             long endTime = System.nanoTime();
-             timeElapsed = endTime - startTime;
-             if(isRecursion){
-                 tvKnapSackValue.setText("Max Value: "+String.valueOf(maxValByRecursion(Integer.
-                         valueOf(knapsackWeight), intArr, intArr1, intArr1.length))+ "Time taken to " +
-                         "execute program : " + timeElapsed + "Nano sec");
-             }else {
-                 tvKnapSackValue.setText("Max Value: "+String.valueOf(getMaxValByDynamicProg(Integer.
-                         valueOf(knapsackWeight), intArr, intArr1, intArr1.length))+ "Time taken to " +
-                         "execute program : " + timeElapsed + "Nano sec");
-             }
-         }catch (Exception e){
-             e.printStackTrace();
-             Toast.makeText(this, "Please enter valid number don't give input in decimal format.", Toast.LENGTH_SHORT).show();
-         }
-        }else{
+        //Condition to check number of object weight has must some value there
+        //are no weight with value or viceversa
+        if (objWeightArr.length == objValArr.length) {
+            try {
+                long endTime = System.nanoTime();
+                timeElapsed = endTime - startTime;
+                //Setting value to Textview on the condition whether it is solved from
+                //recursion or through dynamic problem
+                //set Best value
+                // Set program execution time
+                //set time complexity to textview
+                if (isRecursion) {
+                    tvKnapSackValue.setText("Max Value: " + String.valueOf(maxValByRecursion(Integer.
+                            valueOf(knapsackWeight), intWeightArr, intValArr, intValArr.length)) + "Time taken to " +
+                            "execute program : " + timeElapsed + "Nano sec");
+                } else {
+                    tvKnapSackValue.setText("Max Value: " + String.valueOf(getMaxValByDynamicProg(Integer.
+                            valueOf(knapsackWeight), intWeightArr, intValArr, intValArr.length)) + "Time taken to " +
+                            "execute program : " + timeElapsed + "Nano sec");
+                }
+            } catch (Exception e) {
+                // Exception handling for wrong type input given by user
+                e.printStackTrace();
+                Toast.makeText(this, R.string.valid, Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            //Message to show number of object weight has must some value there
+            //are no weight with value or viceversa
             Toast.makeText(this, getResources().getString(R.string.weight_value_wrong_input), Toast.LENGTH_SHORT).show();
         }
 

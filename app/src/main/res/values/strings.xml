@@ -9,4 +9,5 @@
     <string name="weight_value_wrong_input">Please enter same  number of object weight and value seprated with comma like (12,16,8)&amp; (14,18,6) </string>
     <string name="by_recursion">By Recursion</string>
     <string name="toolbar_text">Tenner Coding Challenge App</string>
+    <string name="valid">Please enter valid number don\'t give input in decimal or special character as a input.</string>
 </resources>
